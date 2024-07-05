@@ -36,7 +36,8 @@ function FooterLink() {
                 key={subIndex}
                 className='text-[16px] text-[#252525] leading-8 sm:leading-10 cursor-pointer'
               >
-                {text.includes("social.png") ? (
+                {text.includes("social.png") ||
+                text.startsWith("data:image/png;base64,") ? (
                   <Image src={text} alt='Social icon' />
                 ) : (
                   text
