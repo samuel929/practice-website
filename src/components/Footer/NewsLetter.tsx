@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react";
 import Adams from "../../assets/adams.png";
 import { Image } from "@chakra-ui/react";
-
+import Social from "../../assets/social.png";
 function NewsLetter() {
   return (
     <div className='flex flex-col sm:flex-row justify-between items-center py-20 px-6 sm:px-[55px]'>
@@ -16,6 +16,10 @@ function NewsLetter() {
       </div>
       <div>
         <Image className='w-[193px] md:w-auto' src={Adams} />
+        <Image
+          className='h-[24px] w-[188px] object-contain mt-5 lg:hidden'
+          src={Social}
+        />
       </div>
     </div>
   );
