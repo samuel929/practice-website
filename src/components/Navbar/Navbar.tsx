@@ -61,7 +61,8 @@ function Navbar() {
             <IoSearchSharp size={20} />
           </li>
         </ul>
-        <div className='lg:hidden'>
+        <div className='flex items-center lg:hidden'>
+          <IoSearchSharp size={20} className='mr-4' />
           <GiHamburgerMenu size={24} onClick={() => setMenuOpen(!menuOpen)} />
         </div>
       </nav>
@@ -78,7 +79,7 @@ function Navbar() {
                 <Text className='font-lato py-2'>{item.label}</Text>
               </NavLink>
             ))}
-            <li className='py-2'>
+            <li className='py-2 hidden cursor-pointer sm:block'>
               <IoSearchSharp size={20} />
             </li>
           </ul>
