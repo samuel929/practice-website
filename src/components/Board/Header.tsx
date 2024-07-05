@@ -31,11 +31,11 @@ function Header() {
           />
         </div>
 
-        <div className='flex flex-row w-full sm:flex-row md:w-[760px] sm:w-[870px] justify-between mt-4'>
-          <div className='relative w-[187px]  sm:w-[420px] my-2'>
+        <div className='flex flex-row w-full sm:flex-row md:w-[870px] sm:w-[870px] justify-between mt-4'>
+          <div className='relative w-[187px] sm:w-[420px] my-2'>
             <select
               title='Practice Area'
-              className='block appearance-none md:w-[300px] custom-select h-[60px] rounded w-full sm:w-[420px] p-3 sm:p-[18px_20px_18px_20px] text-base sm:text-xl placeholder:text-black outline-black border-black border-solid border'
+              className='block appearance-none md:w-[430px] custom-select h-[60px] rounded w-full sm:w-[420px] p-3 sm:p-[18px_20px_18px_20px] text-base sm:text-xl placeholder:text-black outline-black border-black border-solid border'
             >
               <option disabled selected className='lato-regular'>
                 Practice Areas
@@ -50,15 +50,15 @@ function Header() {
                 </option>
               ))}
             </select>
-            <div className='hidden sm:flex md:hidden  pointer-events-none absolute inset-y-0 right-0  items-center px-2 text-gray-700'>
+            <div className='hidden sm:flex absolute inset-y-0 right-0 items-center px-2 text-gray-700'>
               <PiCaretRightBold />
             </div>
           </div>
 
-          <div className='relative  w-[187px] sm:w-[420px] my-2'>
+          <div className='relative w-[187px] sm:w-[420px] my-2'>
             <select
               title='Location'
-              className='block appearance-none w-full md:w-[300px] h-[60px] custom-select rounded w-full sm:w-[420px] p-3 sm:p-[18px_20px_18px_20px] text-base sm:text-xl placeholder:text-black outline-black border-black border-solid border'
+              className='block appearance-none w-full md:w-[430px] h-[60px] custom-select rounded w-full sm:w-[420px] p-3 sm:p-[18px_20px_18px_20px] text-base sm:text-xl placeholder:text-black outline-black border-black border-solid border'
             >
               <option disabled selected>
                 Location
@@ -69,7 +69,7 @@ function Header() {
                 </option>
               ))}
             </select>
-            <div className='pointer-events-none hidden  absolute inset-y-0 right-0 sm:flex  md:hidden   items-center px-2 text-gray-700'>
+            <div className='hidden sm:flex absolute inset-y-0 right-0 items-center px-2 text-gray-700'>
               <PiCaretRightBold />
             </div>
           </div>
