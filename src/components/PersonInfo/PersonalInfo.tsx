@@ -25,7 +25,7 @@ function PersonalInfo({ person }: IPerson) {
         <div>
           <Image
             src={person?.image}
-            className='rounded-lg h-[458px]  w-full sm:w-[431px]'
+            className='rounded-lg h-[458px]  w-full sm:w-[431px] bg-cover bg-center'
             alt='Profile Picture'
           />
         </div>

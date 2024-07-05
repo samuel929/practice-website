@@ -36,7 +36,7 @@ function AwardsSlider() {
   };
   return (
     <div className='pl-0 sm:pl-[30px]'>
-      <p className='lato-regular text-[24px] sm:text-[34px]'>
+      <p className='lato-regular text-[24px] sm:text-[34px] pl-11 sm:pl-0'>
         Awards & Accolades
       </p>
 

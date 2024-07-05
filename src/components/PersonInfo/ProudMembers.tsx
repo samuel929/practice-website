@@ -5,7 +5,7 @@ import { awardsType } from "../../types/types";
 function ProudMembers() {
   return (
     <div className='pl-0 sm:pl-[30px] mt-32 pr-0 sm:pr-[230px]'>
-      <p className='lato-regular text-[24px] sm:text-[34px]'>
+      <p className='lato-regular text-[24px] sm:text-[34px] pl-11 sm:pl-0'>
         Proud members of
       </p>
       <div className='overflow-x-auto  sm:hide-scrollbar'>

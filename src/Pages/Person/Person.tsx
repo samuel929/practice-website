@@ -36,14 +36,14 @@ function Person() {
           <PersonalInfo person={person} />
         </div>
 
-        <div className='py-80 pl-11 sm:pl-0'>
+        <div className='py-80 pl-0 sm:pl-11'>
           <AwardsSlider />
           <ProudMembers />
         </div>
       </div>
-      <div className=' bg-[#1F394C] p-0 sm:px-11   py-[52px] sm:py-[100px]'>
-        <div className='flex items-center justify-start sm:justify-between  px-11 py-6'>
-          <p className='lato-light text-[24px] sm:text-[34px] text-[#FCFCFC]'>
+      <div className=' bg-[#1F394C] px-0 sm:px-11   py-[52px] sm:py-[100px]'>
+        <div className='flex items-center justify-start sm:justify-between px-6 sm:px-11 py-6'>
+          <p className='lato-light text-[24px] sm:text-[34px] text-[#FCFCFC] '>
             Alexis Apostolidis News & Podcasts
           </p>
           <p className='lato-bold  hidden sm:block text-[#FCFCFC] text-[14px] cursor-pointer'>
