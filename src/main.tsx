@@ -9,9 +9,8 @@ import ScrollToTop from "./hooks/ScrollToTop.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ChakraProvider>
-      <RouterProvider router={router}>
-        <ScrollToTop />
-      </RouterProvider>
+      <ScrollToTop />
+      <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>
 );

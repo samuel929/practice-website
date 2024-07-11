@@ -1,4 +1,3 @@
-import React from "react";
 import { PracticeAresSection } from "../../dummyData/PracticeAreas/PracticeAreas";
 
 function PracticeAreasSection() {

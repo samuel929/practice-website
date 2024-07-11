@@ -1,5 +1,3 @@
-import React from "react";
-
 function GetInTouch() {
   return (
     <div className=' bg-[#1F394C] px-0 sm:px-11   py-[52px] sm:py-[100px]'>
