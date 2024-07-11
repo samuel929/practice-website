@@ -1,23 +1,31 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { Img, Text } from "@chakra-ui/react";
 import Logo from "../../assets/logo.png";
-import { IoSearchSharp } from "react-icons/io5";
+import { IoClose, IoSearchSharp } from "react-icons/io5";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-function Navbar() {
+type NavItems = {
+  to: string;
+  label: string;
+};
+interface IProps {
+  handleMouseLeave: () => void;
+  handleMouseEnter: (b: string) => void;
+  navItems: NavItems[];
+  navLoginItems: NavItems[];
+}
+
+function Navbar({
+  handleMouseEnter,
+  handleMouseLeave,
+  navItems,
+  navLoginItems,
+}: IProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showInput, setShowInput] = useState(false);
   const location = useLocation();
 
-  const navItems = [
-    { to: "/practice", label: "Practice Areas" },
-    { to: "/ip-Africa", label: "IP Africa" },
-    { to: "/people", label: "People" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
-  ];
-
-  const navLoginItems = [{ to: "/IP", label: "IP Connect Login" }];
   return (
     <div className='shadow-custom'>
       <nav className='flex items-center justify-between px-4 py-2 md:px-8'>
@@ -37,7 +45,12 @@ function Navbar() {
           <li className='hidden lg:block'>
             <div className='grid gap-4 grid-cols-5 text-center'>
               {navItems.map((item) => (
-                <NavLink key={item.to} to={item.to}>
+                <NavLink
+                  onMouseEnter={() => handleMouseEnter(item.to)}
+                  onMouseLeave={() => handleMouseLeave()}
+                  key={item.to}
+                  to={item.to}
+                >
                   <Text className='font-lato'>{item.label}</Text>
                   <div
                     className={`font-lato ${
@@ -51,15 +64,37 @@ function Navbar() {
             </div>
           </li>
         </ul>
-        <ul className='hidden lg:flex w-48 justify-between items-center'>
-          {navLoginItems.map((item) => (
-            <NavLink key={item.to} to={item.to} className='font-lato'>
-              {item.label}
-            </NavLink>
-          ))}
-          <li>
-            <IoSearchSharp size={20} />
-          </li>
+        <ul
+          className={`hidden lg:flex ${
+            showInput ? "w-[714px]" : "w-48"
+          } justify-between items-center`}
+        >
+          {showInput
+            ? null
+            : navLoginItems.map((item) => (
+                <NavLink key={item.to} to={item.to} className='font-lato'>
+                  {item.label}
+                </NavLink>
+              ))}
+          {showInput ? (
+            <>
+              <input
+                type='text'
+                title='Search'
+                className='py-[6px] px-[20px] w-[714px] border-[#1F394C] border-2 rounded-[4px] placeholder:text-[20px] placeholder:text-[#252525] placeholder:lato-regular'
+                placeholder='Search...'
+              />
+              <IoClose
+                size={20}
+                className='cursor-pointer relative right-8'
+                onClick={() => setShowInput(false)}
+              />
+            </>
+          ) : (
+            <li className='cursor-pointer'>
+              <IoSearchSharp size={20} onClick={() => setShowInput(true)} />
+            </li>
+          )}
         </ul>
         <div className='flex items-center lg:hidden'>
           <IoSearchSharp size={20} className='mr-4' />
@@ -79,9 +114,6 @@ function Navbar() {
                 <Text className='font-lato py-2'>{item.label}</Text>
               </NavLink>
             ))}
-            <li className='py-2 hidden cursor-pointer sm:block'>
-              <IoSearchSharp size={20} />
-            </li>
           </ul>
         </div>
       )}

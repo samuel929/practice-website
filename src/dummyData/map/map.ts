@@ -1,0 +1,70 @@
+import { geoData } from "./maps";
+
+
+export const africanCountries = [
+    "DZ",
+    "AO",
+    "BJ",
+    "BW",
+    "BF",
+    "BI",
+    "CM",
+    "CV",
+    "CF",
+    "TD",
+    "KM",
+    "CG",
+    "CD",
+    "CI",
+    "DJ",
+    "EG",
+    "GQ",
+    "ER",
+    "ET",
+    "GA",
+    "GM",
+    "GH",
+    "GN",
+    "GW",
+    "KE",
+    "LS",
+    "LR",
+    "LY",
+    "MG",
+    "MW",
+    "ML",
+    "MR",
+    "MU",
+    "MA",
+    "MZ",
+    "NA",
+    "NE",
+    "NG",
+    "RW",
+    "ST",
+    "SN",
+    "SC",
+    "SL",
+    "SO",
+    "ZA",
+    "SS",
+    "SD",
+    "SZ",
+    "TZ",
+    "TG",
+    "TN",
+    "UG",
+    "ZM",
+    "ZW",
+];
+export const africanCountryData = africanCountries.map(country => ({
+    id: country,
+    value: Math.floor(Math.random() * 1000000)
+}));
+
+export const filteredGeoJSON = {
+    type: "FeatureCollection",
+    features: geoData.features.filter((feature: any) =>
+        africanCountries.includes(feature.properties)
+    ),
+};

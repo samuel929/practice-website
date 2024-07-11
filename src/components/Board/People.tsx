@@ -60,7 +60,7 @@ function Peoples() {
         <TabPanels>
           {tabs.map((tab, index) => (
             <TabPanel key={tab.id}>
-              {index === 1 ? (
+              {index === 0 || index === 1 ? (
                 <div>
                   <div className='grid grid-cols-1 m-auto sm:gap-14 sm:grid-cols-3  mt-8 sm:mt-16 justify-center'>
                     {board.map((item) => (

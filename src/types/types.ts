@@ -24,3 +24,72 @@ export type newsType = {
     date: string,
     badges: string[]
 }
+
+
+export type PracticeMember = {
+    title: string,
+    subText: string,
+    image: string
+}
+
+export type PracticeAreasSection = {
+    id: string,
+    title: string,
+    path?: string,
+    body: string,
+}
+
+export type ABoutUsArrowsType = {
+    id: number,
+    text: string,
+    path?: string,
+    body: string
+}
+
+export type testimonialsType = {
+    text: string,
+    card: {
+        button: string
+        id: number,
+        text: string,
+    }[]
+}
+
+export type aboutCareers = {
+    title: string,
+    text1: string,
+    text2: string
+}
+
+
+export type MegaMenu = {
+    Heading: string;
+    navItems: {
+        title: string;
+        subMenu: string[];
+    }[];
+}
+
+
+export type MegaMenuAbout = {
+    title: string,
+    subMenu: string[]
+}
+
+export type DropdownType = {
+    id: number,
+    title: string,
+    body: string,
+    sections: {
+        title: string,
+        body: string
+    }[]
+}
+
+export enum paths {
+    PRACTICE = '/practice',
+    IPAFRICA = '/ip-Africa',
+    PEOPLE = '/people',
+    ABOUT = '/about',
+    CONTACT = '/contact',
+}

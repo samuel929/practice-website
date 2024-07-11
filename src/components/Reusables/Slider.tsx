@@ -1,9 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { awards } from "../../dummyData/awards/awards";
-
-function AwardsSlider() {
+import { sliderImages } from "../../dummyData/about/About";
+function Sliders() {
   const settings = {
     dots: false,
     infinite: true,
@@ -29,23 +28,19 @@ function AwardsSlider() {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
   };
   return (
-    <div className='pl-0 sm:pl-[30px]'>
-      <p className='lato-light text-[24px] sm:text-[34px] pl-11 sm:pl-0'>
-        Awards & Accolades
-      </p>
-
+    <div>
       <div className='mx-x-auto overflow-hidden mt-32'>
         <Slider {...settings}>
-          {awards.map((award) => (
-            <div key={award.id}>
+          {sliderImages.map((award) => (
+            <div key={award.id} className='px-2'>
               <img
-                className='h-[125px] w-full object-contain'
+                className='h-[448px] w-[355px] bg-cover bg-center '
                 src={award.img}
                 alt={`Award ${award.id}`}
               />
@@ -57,4 +52,4 @@ function AwardsSlider() {
   );
 }
 
-export default AwardsSlider;
+export default Sliders;

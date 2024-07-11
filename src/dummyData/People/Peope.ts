@@ -104,7 +104,7 @@ export const news: newsType[] = [
         date: 'February 8, 2024',
         badges: ['Adams news', 'Zambia']
     }
-]
+];
 
 export const tabs = [
     {
