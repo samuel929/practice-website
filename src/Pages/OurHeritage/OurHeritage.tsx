@@ -20,7 +20,7 @@ function OurHeritage() {
 
           <BreadcrumbItem isCurrentPage>
             <Link className='lato-regular text-[16px] text-[#252525]' to={``}>
-              Corporate Social Investment
+              Our Heritage
             </Link>
           </BreadcrumbItem>
         </Breadcrumb>
@@ -29,7 +29,7 @@ function OurHeritage() {
         {PracticeAreasHeader.map((item, index: number) => (
           <div key={index}>
             <p className='lato-light w-full sm:w-full text-[24px] sm:text-[60px] pl-7 sm:pl-11 pt-20 pb-10'>
-              Corporate Social Investment
+              Our Heritage
             </p>
             <div className='flex justify-center flex-wrap sm:grid grid-cols-3 gap-3 sm:pr-10  pb-20'>
               <div></div>
@@ -71,16 +71,15 @@ function OurHeritage() {
         ))}
       </div>
       <div>
-        <div className='container mx-auto p-4'>
+        <div className='pl-11 '>
           <div className='relative'>
-            <div className='absolute left-1/4 w-px bg-gray-300 h-full'></div>
+            <div className='absolute left-1 w-px bg-gray-300 h-full'></div>
             {timelineData.map((item, index) => (
               <TimelineItem
                 key={index}
                 yearRange={item.yearRange}
-                title={item.title}
                 description={item.description}
-                image={item.image}
+                image={item.images}
               />
             ))}
           </div>
