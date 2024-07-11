@@ -1,4 +1,4 @@
-import { IoSearchSharp } from "react-icons/io5";
+// import { IoSearchSharp } from "react-icons/io5";
 import MyResponsiveChoroplethCanvas from "../../components/map/MyResponsiveChoroplethCanvas";
 import FindOutMore from "../../components/Reusables/FindOutMore";
 import GetInTouch from "../../components/Reusables/GetInTouch";
@@ -51,7 +51,7 @@ function IpAfrica() {
         </div>
       </div>
       <div>
-        <div className='flex justify-center flex-wrap'>
+        {/* <div className='flex justify-center flex-wrap'>
           <div className='mr-5'>
             {" "}
             <input
@@ -89,7 +89,7 @@ function IpAfrica() {
               placeholder='Search...'
             />
           </div>
-        </div>
+        </div> */}
         <MyResponsiveChoroplethCanvas />
       </div>
 
