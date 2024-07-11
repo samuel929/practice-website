@@ -105,3 +105,9 @@ export type firmRankingType = {
         img: string
     }[]
 }
+
+export type timelineType = {
+    yearRange: string,
+    description: string,
+    images: string[]
+}

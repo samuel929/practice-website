@@ -79,7 +79,7 @@ function OurHeritage() {
                 key={index}
                 yearRange={item.yearRange}
                 description={item.description}
-                image={item.images}
+                images={item.images}
               />
             ))}
           </div>

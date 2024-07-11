@@ -1,6 +1,7 @@
 import { FaCircle } from "react-icons/fa";
+import { timelineType } from "../../types/types";
 
-const TimelineItem = ({ yearRange, title, description, image }: any) => (
+const TimelineItem = ({ yearRange, description, images }: timelineType) => (
   <div className='flex flex-wrap-reverse sm:flex-nowrap mb-8 h-auto sm:h-[354px] pl-5'>
     <div className='w-full sm:w-[1000px] h-auto sm:h-[286px]'>
       <FaCircle className='relative right-6 top-6' />
@@ -12,11 +13,11 @@ const TimelineItem = ({ yearRange, title, description, image }: any) => (
       </div>
     </div>
     <div className='flex flex-wrap h-auto sm:h-[286px] relative sm:bottom-60 mt-5 sm:mt-60'>
-      {image.map((item, index: number) => (
+      {images.map((item: string, index: number) => (
         <img
           src={item}
           key={index}
-          alt={title}
+          alt={"timeline"}
           className='w-[142px] h-[142px] m-2'
         />
       ))}

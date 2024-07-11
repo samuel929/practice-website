@@ -3,6 +3,7 @@ import {
     awardsType,
     firmRankingType,
     PracticeAreasSection,
+    timelineType,
 } from "../../types/types";
 import img1 from "../../assets/gallery1.png";
 import img2 from "../../assets/gallery2.jpg";
@@ -84,7 +85,9 @@ export const sliderImages: awardsType[] = [
     },
 ];
 
-export const timelineData = [
+
+
+export const timelineData: timelineType[] = [
     {
         yearRange: "1875 - 1900",
 
