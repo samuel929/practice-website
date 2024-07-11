@@ -31,7 +31,7 @@ function OurHeritage() {
             <p className='lato-light w-full sm:w-full text-[24px] sm:text-[60px] pl-7 sm:pl-11 pt-20 pb-10'>
               Our Heritage
             </p>
-            <div className='flex justify-center flex-wrap sm:grid grid-cols-3 gap-3 sm:pr-10  pb-20'>
+            <div className='flex  flex-wrap sm:grid grid-cols-3 gap-3 pl-5 sm:pl-0 sm:pr-10  pb-20'>
               <div></div>
               <div>
                 <p className='w-[315px] sm:w-[426px] text-[14px] sm:text-[16px] lato-regular'>
