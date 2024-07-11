@@ -46,6 +46,7 @@ function Navbar({
             <div className='grid gap-4 grid-cols-5 text-center'>
               {navItems.map((item) => (
                 <NavLink
+                  preventScrollReset={true}
                   onMouseEnter={() => handleMouseEnter(item.to)}
                   onMouseLeave={() => handleMouseLeave()}
                   key={item.to}

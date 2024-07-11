@@ -65,6 +65,7 @@ function Peoples() {
                   <div className='grid grid-cols-1 m-auto sm:gap-14 sm:grid-cols-3  mt-8 sm:mt-16 justify-center'>
                     {board.map((item) => (
                       <Link
+                        preventScrollReset={false}
                         to={`/person/${item.id}`}
                         className='no-underline'
                         key={item.id}

@@ -1,11 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 // import MegaMenuLayout from "../components/Reusables/MegaMenuLayout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { paths } from "../types/types";
 
 const Layout = () => {
+  const { pathname } = useLocation();
   const [active, setActive] = useState<string | null>(null); // State to track active NavLink
   const navItems = [
     { to: "/practice", label: "Practice Areas" },
@@ -21,6 +23,10 @@ const Layout = () => {
     /**left console here, so active is used and build issues dissapear */
     console.log(active); // Set the active NavLink ID on hover
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top on route change
+  }, [pathname]);
 
   const handleMouseLeave = () => {
     setActive(null); // Reset active state on mouse leave
