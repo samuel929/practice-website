@@ -51,7 +51,7 @@ function IpAfrica() {
         </div>
       </div>
       <div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center flex-wrap'>
           <div className='mr-5'>
             {" "}
             <input
