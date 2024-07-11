@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ProudMembers from "../../components/PersonInfo/ProudMembers";
 import { PracticeAreasHeader } from "../../dummyData/PracticeAreas/PracticeAreas";
 import { Breadcrumb, BreadcrumbItem, Image } from "@chakra-ui/react";
+import AwardsFrimRanking from "../../components/About/AwardsFrimRanking";
 function AwardRanking() {
   return (
     <div>
@@ -27,14 +28,10 @@ function AwardRanking() {
       <div>
         {PracticeAreasHeader.map((item, index: number) => (
           <div key={index}>
-            <p className='lato-light w-[196px] sm:w-[498px] text-[24px] sm:text-[60px] pl-11 pt-20 pb-10'>
-              {item.title}
+            <p className='lato-light w-[257px] sm:w-full text-[24px] sm:text-[60px] pl-11 pt-20 pb-10'>
+              Awards & Rankings
             </p>
-            <div className='flex pl-11 sm:justify-end sm:pr-10'>
-              <p className='w-[315px] sm:w-[426px] text-[14px]'>
-                {item.subText}
-              </p>
-            </div>
+
             <div className='pt-12 pb-56'>
               <Image src={item.image} className='w-full' />
             </div>
@@ -70,6 +67,10 @@ function AwardRanking() {
             facilisis nisi, ac posuere leo.
           </p>
         </div>
+      </div>
+
+      <div>
+        <AwardsFrimRanking />
       </div>
       <div className='pb-32'>
         <ProudMembers />

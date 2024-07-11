@@ -93,3 +93,15 @@ export enum paths {
     ABOUT = '/about',
     CONTACT = '/contact',
 }
+
+
+export type firmRankingType = {
+    title: string,
+    subText: string,
+    body: string,
+    awards: {
+        title: string,
+        points?: string[] | undefined,
+        img: string
+    }[]
+}

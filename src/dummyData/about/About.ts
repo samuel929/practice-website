@@ -1,9 +1,12 @@
-import { aboutCareers, awardsType, PracticeAreasSection } from "../../types/types";
+import { aboutCareers, awardsType, firmRankingType, PracticeAreasSection } from "../../types/types";
 import img1 from '../../assets/gallery1.png'
 import img2 from '../../assets/gallery2.jpg'
 import img3 from '../../assets/gallery3.png'
 import img4 from '../../assets/gallery4.png'
-
+import imgAbout1 from '../../assets/aboutAwards1.jpg'
+import imgAbout2 from '../../assets/aboutAwards2.jpg'
+import imgAbout3 from '../../assets/aboutAwards3.jpg'
+import imgAbout4 from '../../assets/aboutAwards4.jpg'
 export const MoreOfWhatWeDo: PracticeAreasSection[] = [
     {
         id: '01',
@@ -117,7 +120,9 @@ export const timelineData = [
 
 ];
 
-export const firmRanking = [
+
+
+export const firmRanking: firmRankingType[] = [
     {
         title: 'Firm Rankings',
         subText: 'Awards',
@@ -126,22 +131,22 @@ export const firmRanking = [
             {
                 title: 'Chambers & Partners',
                 points: ['Band 4 Ranking – Dispute Resolution | 2021 – 2024', 'Band 1 Ranking – Intellectual Property Law Firm | 2016 – 2024 '],
-                img: ''
+                img: imgAbout1
             },
             {
                 title: 'Whos Who Legal',
                 points: ['Patents – Tier 1 Ranking | 2018 – 2022', 'Trademarks – Tier 1 Ranking | 2018 – 2022 ', 'Sports & Entertainment – Tier 1 Ranking | 2018'],
-                img: ''
+                img: imgAbout2
             },
             {
                 title: 'World IP Survey | IP Stars (MIP)',
                 points: ['Copyright – Tier 1 Ranking | 2016 – 2022', 'Patents – Tier 1 Ranking | 2021 – 2022', 'Trade Mark Practice – Tier 1 Ranking | 2018 – 2023'],
-                img: ''
+                img: imgAbout3
             },
             {
                 title: 'Legal 500 - Europe - Middle East - Africa',
-                points: [''],
-                img: ''
+
+                img: imgAbout4
             }
         ]
     }
