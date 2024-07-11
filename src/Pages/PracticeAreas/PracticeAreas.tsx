@@ -6,20 +6,20 @@ import News from "../../components/PersonInfo/News";
 import { newsType } from "../../types/types";
 import GetInTouch from "../../components/Reusables/GetInTouch";
 import AboutUsArrows from "../../components/Reusables/AboutUsArrows";
-import { testimonials } from "../../dummyData/PracticeAreas/PracticeAreas";
+// import { testimonials } from "../../dummyData/PracticeAreas/PracticeAreas";
 import { useLocation } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-import { useRef } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+// import { Navigation, Pagination } from "swiper/modules";
+// import { useRef } from "react";
+// import { FaArrowRight } from "react-icons/fa";
+// import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 function PracticeAreas() {
   const location = useLocation();
-  const swiperRef = useRef(null);
+  // const swiperRef = useRef(null);
   return (
     <div>
       <Header />
