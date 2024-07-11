@@ -4,6 +4,8 @@ import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 // import MegaMenuLayout from "../components/Reusables/MegaMenuLayout";
 import { useEffect, useState } from "react";
+import MegaMenuLayout from "../components/Reusables/MegaMenuLayout";
+import { paths } from "../types/types";
 // import { paths } from "../types/types";
 
 const Layout = () => {
@@ -20,8 +22,7 @@ const Layout = () => {
   const navLoginItems = [{ to: "/IP", label: "IP Connect Login" }];
   const handleMouseEnter = (navLinkId: string) => {
     setActive(navLinkId);
-    /**left console here, so active is used and build issues dissapear */
-    console.log(active); // Set the active NavLink ID on hover
+    // Set the active NavLink ID on hover
   };
 
   useEffect(() => {
@@ -32,20 +33,17 @@ const Layout = () => {
     setActive(null); // Reset active state on mouse leave
   };
 
-  // const renderNavItemsMegaMenu = () => {
-  //   switch (active) {
-  //     case paths.PRACTICE:
-  //       <MegaMenuLayout path={paths.PRACTICE} />;
-  //       break;
-  //     case paths.IPAFRICA:
-  //       return <MegaMenuLayout path={paths.IPAFRICA} />;
-  //       break;
-  //     case paths.ABOUT:
-  //       return <MegaMenuLayout path={paths.ABOUT} />;
-  //       break;
-  //     default:
-  //   }
-  // };
+  const renderNavItemsMegaMenu = () => {
+    switch (active) {
+      case paths.IPAFRICA:
+        return <MegaMenuLayout path={paths.IPAFRICA} />;
+        break;
+      case paths.ABOUT:
+        return <MegaMenuLayout path={paths.ABOUT} />;
+        break;
+      default:
+    }
+  };
 
   return (
     <div>
@@ -55,7 +53,7 @@ const Layout = () => {
         handleMouseLeave={handleMouseLeave}
         handleMouseEnter={handleMouseEnter}
       />
-      {/* {renderNavItemsMegaMenu()} */}
+      {renderNavItemsMegaMenu()}
       <main className='flex-grow'>
         <Outlet />
       </main>

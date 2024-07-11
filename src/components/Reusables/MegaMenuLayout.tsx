@@ -10,7 +10,7 @@ interface IMegaMenuProps {
 
 function MegaMenuLayout({ path }: IMegaMenuProps) {
   return (
-    <div className='w-full h-[299px] pt-[27px] px-[60px] pb-[48px] bg-white'>
+    <div className='w-full h-[299px] pt-[27px] px-[60px] pb-[48px] bg-white hidden sm:block'>
       {path === "/practice" ? (
         <MegaMenuLayoutPractice practiceAreaItems={PracticeArea} />
       ) : (
