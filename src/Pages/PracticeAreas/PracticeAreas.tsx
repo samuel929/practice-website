@@ -6,20 +6,19 @@ import News from "../../components/PersonInfo/News";
 import { newsType } from "../../types/types";
 import GetInTouch from "../../components/Reusables/GetInTouch";
 import AboutUsArrows from "../../components/Reusables/AboutUsArrows";
-// import { testimonials } from "../../dummyData/PracticeAreas/PracticeAreas";
+import { testimonials } from "../../dummyData/PracticeAreas/PracticeAreas";
 import { useLocation } from "react-router-dom";
-// import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import { Navigation, Pagination } from "swiper/modules";
-// import { useRef } from "react";
-// import { FaArrowRight } from "react-icons/fa";
-// import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import { Navigation } from "swiper/modules";
+import { useRef } from "react";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 function PracticeAreas() {
   const location = useLocation();
-  // const swiperRef = useRef(null);
+  const swiperRef = useRef<SwiperClass | null>(null);
   return (
     <div>
       <Header />
@@ -43,13 +42,13 @@ function PracticeAreas() {
             View All
           </button>
         </div>
-        {/* <div className='pt-32'>
-          <p className='text-[34px] lato-light text-white pl-11'>
+        <div className='pt-32'>
+          <p className='text-[24px] sm:text-[34px] lato-light text-white pl-11'>
             Testimonials
           </p>
-          <div className='flex '>
+          <div className='flex flex-wrap sm:flex-nowrap'>
             <div className='w-full sm:w-[1900px]'>
-              <p className='w-[438px] h-[57px] text-white pl-11'>
+              <p className=' w-[344px] sm:w-[438px] h-[57px] text-white pl-11  text-[16px]'>
                 {testimonials.text}
               </p>
             </div>
@@ -57,18 +56,24 @@ function PracticeAreas() {
               <Swiper
                 modules={[Navigation]}
                 spaceBetween={3}
-                slidesPerView={2}
+                slidesPerView={1}
+                breakpoints={{
+                  // Responsive breakpoints
+                  640: {
+                    slidesPerView: 2, // Show 2 slides per view on screens wider than 640px (tablet and larger)
+                  },
+                }}
                 navigation={{
                   prevEl: ".swiper-button-prev",
                   nextEl: ".swiper-button-next",
                 }}
-                onSwiper={(swiper) => {
+                onSwiper={(swiper: SwiperClass) => {
                   swiperRef.current = swiper;
                 }}
-                className='mySwiper w-[200px] sm:w-[800px] '
+                className='mySwiper w-[426px] sm:w-[800px]  mt-14 sm:mt-0'
               >
                 {testimonials.card.map((item, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide key={index} className='ml-4 sm:ml-0'>
                     <div className='px-[30px] py-[40px] bg-white rounded-[8px] w-[380px] h-[300px] '>
                       <p className='text-[14px] w-[320px] h-[85px] '>
                         {item.text}
@@ -105,7 +110,7 @@ function PracticeAreas() {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
       <ProudMembers />
       <div className='py-80 pl-[30px]'>
