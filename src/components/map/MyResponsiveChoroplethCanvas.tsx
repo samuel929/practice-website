@@ -1,49 +1,71 @@
 import { ResponsiveChoroplethCanvas } from "@nivo/geo";
-
 import { africanCountryData } from "../../dummyData/map/map";
 import { geoData } from "../../dummyData/map/maps";
+import { useState } from "react";
+import { africanCountries } from "../../dummyData/IpAfrica/IpAfrica";
 
 const MyResponsiveChoroplethCanvas = () => {
+  const [hoveredFeature, setHoveredFeature] = useState<any | null>(null);
   if (!africanCountryData) {
     return <div>Loading...</div>;
   }
 
-  console.log(africanCountryData);
+  const africanGeoJSON = {
+    ...geoData,
+    features: geoData.features.filter((feature) =>
+      africanCountries.includes(feature.properties.name)
+    ),
+  };
 
+  const handleMouseEnter = (feature: any) => {
+    setHoveredFeature(feature);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredFeature(null);
+  };
   return (
-    <div style={{ height: 500 }}>
+    <div style={{ height: "300px" }}>
       <ResponsiveChoroplethCanvas
-        data={africanCountryData} // Your data for coloring the map
-        features={geoData.features}
+        data={africanCountryData}
+        features={africanGeoJSON.features}
         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
-        colors='RdBu'
-        domain={[0, 1000000]}
-        unknownColor='#101b42'
+        domain={[0, 1]}
+        unknownColor='#afb6ba'
         label='properties.name'
         valueFormat='.2s'
-        projectionTranslation={[0.5, 0.5]}
+        projectionScale={150}
+        projectionTranslation={[0.45, 0.5]}
         projectionRotation={[0, 0, 0]}
-        enableGraticule={true}
-        graticuleLineColor='rgba(0, 0, 0, .2)'
         borderWidth={0.5}
-        borderColor='#101b42'
-        pixelRatio={window.devicePixelRatio || 1} // Add this line
-        legends={[
-          {
-            anchor: "bottom-left",
-            direction: "column",
-            justify: true,
-            translateX: 20,
-            translateY: -60,
-            itemsSpacing: 0,
-            itemWidth: 92,
-            itemHeight: 18,
-            itemDirection: "left-to-right",
-            itemOpacity: 0.85,
-            symbolSize: 18,
-          },
-        ]}
+        borderColor='black'
+        colors={"oranges"}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        tooltip={({ feature }: any) => (
+          <div style={{ color: "white", background: "black", padding: "5px" }}>
+            <strong>{feature.properties.name}</strong>
+            <br />
+            Value: {feature.value}
+          </div>
+        )}
       />
+      {hoveredFeature && (
+        <div
+          style={{
+            position: "absolute",
+            top: "10px",
+            left: "10px",
+            background: "white",
+            padding: "10px",
+            border: "1px solid black",
+          }}
+        >
+          <h3>{hoveredFeature.properties.name}</h3>
+          <p>Full Description: ...</p>
+          {/* Add more details as needed */}
+        </div>
+      )}
     </div>
   );
 };

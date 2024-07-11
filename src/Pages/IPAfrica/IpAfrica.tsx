@@ -1,3 +1,4 @@
+import { IoSearchSharp } from "react-icons/io5";
 import MyResponsiveChoroplethCanvas from "../../components/map/MyResponsiveChoroplethCanvas";
 import FindOutMore from "../../components/Reusables/FindOutMore";
 import GetInTouch from "../../components/Reusables/GetInTouch";
@@ -49,7 +50,49 @@ function IpAfrica() {
           </p>
         </div>
       </div>
-      <MyResponsiveChoroplethCanvas />
+      <div>
+        <div className='flex justify-center'>
+          <div className='mr-5'>
+            {" "}
+            <input
+              type='text'
+              title='Search'
+              className='py-[6px] px-[20px] w-full border-[#1F394C] border-2 rounded-[4px] placeholder:text-[20px] placeholder:text-[#252525] placeholder:lato-regular'
+              placeholder='Search...'
+            />
+            <IoSearchSharp size={20} className='relative bottom-7 left-44' />
+          </div>
+          <div className='mr-5'>
+            {" "}
+            <input
+              type='text'
+              title='Search'
+              className='py-[6px] px-[20px] w-full border-[#1F394C] border-2 rounded-[4px] placeholder:text-[20px] placeholder:text-[#252525] placeholder:lato-regular'
+              placeholder='Search...'
+            />
+          </div>
+          <div className='mr-5'>
+            {" "}
+            <input
+              type='text'
+              title='Search'
+              className='py-[6px] px-[20px] w-full border-[#1F394C] border-2 rounded-[4px] placeholder:text-[20px] placeholder:text-[#252525] placeholder:lato-regular'
+              placeholder='Search...'
+            />
+          </div>
+          <div>
+            {" "}
+            <input
+              type='text'
+              title='Search'
+              className='py-[6px] px-[20px] w-full border-[#1F394C] border-2 rounded-[4px] placeholder:text-[20px] placeholder:text-[#252525] placeholder:lato-regular'
+              placeholder='Search...'
+            />
+          </div>
+        </div>
+        <MyResponsiveChoroplethCanvas />
+      </div>
+
       <div className='my-36'>
         <GetInTouch />
       </div>
